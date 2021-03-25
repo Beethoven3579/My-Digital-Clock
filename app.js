@@ -8,40 +8,31 @@ document.getElementById('month').innerHTML = monthName[fullDate.getMonth()];
 document.getElementById('date').innerHTML = fullDate.getDate() + ",";
 document.getElementById('year').innerHTML = fullDate.getFullYear();
 
+const clockContainer = document.getElementById('clock');
 
-
-document.getElementById('hours').innerHTML = fullDate.getHours() + " :";
-document.getElementById('minutes').innerHTML = fullDate.getMinutes() + " :";
-document.getElementById('seconds').innerHTML  = fullDate.getSeconds();
-
-
-// This works to count up in the browser. 
-
-
-let sec = fullDate.getSeconds();
-
-function countUp() {
-  sec++;
-  document.getElementById('seconds').innerHTML = sec;
+function addZeros(i) {
+    if (i < 10){
+        i = "0" + i;
+    }
+    return i;
 }
 
-setInterval(countUp, 1000);
+function clock() {
+    const date = new Date();
+    const hours = addZeros(date.getHours());
+    const minutes = addZeros(date.getMinutes());
+    const seconds = addZeros(date.getSeconds());
+    const time = `${hours} : ${minutes} : ${seconds}`;
+    
+    clockContainer.innerHTML = time;
+}
+
+clock();
+
+setInterval(clock, 1000);
 
 
-// Trying some recursive biz
 
-
-// let i = 0;
-
-// function increment() {
-//   i++;
-//   console.log(i);
-// }
-
-// let timer = setTimeout(function myTimer() {
-//   increment();
-//   timer = setTimeout(myTimer, 1000) ;
-// }, 1000);
 
 
 
