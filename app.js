@@ -1,6 +1,6 @@
 const monthName = ["January", "February", "March", "April", "May", "June", "July", 
-"August", "September", "October", "November", "December"]
-const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+"August", "September", "October", "November", "December"];
+const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const fullDate = new Date();
 
 document.getElementById('weekday').innerHTML = dayName[fullDate.getDay() - 1];
@@ -10,11 +10,11 @@ document.getElementById('year').innerHTML = fullDate.getFullYear();
 
 const clockContainer = document.getElementById('clock');
 
-function addZeros(i) {
-    if (i < 10){
-        i = "0" + i;
+function addZeros(num) {
+    if (num < 10){
+        num = "0" + num;
     }
-    return i;
+    return num;
 }
 
 function clock() {
@@ -30,14 +30,3 @@ function clock() {
 clock();
 
 setInterval(clock, 1000);
-
-
-
-
-
-
-
-
-
-
-
