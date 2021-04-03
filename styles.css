@@ -7,8 +7,12 @@
 
 body {
     background-color: black;
-
 }
+
+.date-title {
+    margin-top: 13%;
+}
+
 h1 {
     font-size: 60px;
     color: white;
